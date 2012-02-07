@@ -1,0 +1,7 @@
+- if notice
+  %p.notice= notice
+
+= form_for @stylesheet do |f|
+  = f.label "Dynamic stylesheet:"
+  = f.text_area :body, :class => 'stylesheet'
+  = f.submit

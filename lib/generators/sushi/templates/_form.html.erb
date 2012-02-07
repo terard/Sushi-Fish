@@ -1,0 +1,75 @@
+<%= form_for(@page) do |f| %>
+<fieldset class="inputs">
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <ol class="main">
+    
+    <li class="string required title">
+      <%= f.label :Location %><br />
+      <%= f.collection_select :parent_id, Page.all(:order => "name"), :id, :name, :include_blank => true %> /
+      <%= f.text_field :name %>
+    </li>
+    <li class="title">
+      <ul class="check_boxes">
+        <li class="field">
+          <%= f.label "Show in navigation?" %>
+          <%= f.check_box :show_in_nav %>
+          <p class="inline-hints">check box for item to appear in navigation</p>
+        </li>
+      </ul>
+    </li>
+    <li class="string required title">
+      <%= f.label :short_nav %><br />
+      <%= f.text_field :short_nav %>
+    </li>
+    <li class="string required title">
+      <%= f.label :order %><br />
+      <%= f.text_field :order_by %>
+      <p class="inline-hints">this will appear in title</p>
+    </li>
+    
+    <li class="string required title">
+      <%= f.label :title %><br />
+      <%= f.text_field :page_title %>
+      <p class="inline-hints">this will appear in title</p>
+    </li>
+    <li class="string required title">
+      <%= f.label :meta_keywords %><br />
+      <%= f.text_area :meta_keywords, :class => 'small' %>
+    </li>
+    <li class="string required title">
+      <%= f.label :meta_description %><br />
+      <%= f.text_area :meta_description, :class => 'small' %>
+    </li>
+    <li class="string required title">
+      <%= f.label :content %><br />
+      <%= f.text_area :content %>
+    </li>
+    <li class="string required title">
+    </li>
+    <hr>
+    <li class="buttons">
+      <%= f.submit %>
+    </li>
+  </ol>
+  <div class="sidebar">
+    <ol>
+      <li class="select required">
+        <%= f.label :sidebar %><br />
+        <%= f.text_area :sidebar_html %>
+      </li>
+    </ol>
+  </div>
+  
+</fieldset>
+<% end %>

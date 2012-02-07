@@ -1,0 +1,26 @@
+%h1 Listing pages
+
+%table{:class => "tablesorter"}
+  %thead
+    %tr
+      %th{:width => 200} Name
+      %th{:width => 290} Content
+      / %th{:width => 100} Type
+      / %th{:width => 120} Visible
+      / %th{:width => 170} Section
+      %th
+      %th
+  %tbody
+    - @pages.each do |page|
+      %tr
+        %td= page.name
+        %td= truncate page.content, :length => 60
+        / %td= page.page_type
+        / %td= page.visible
+        / %td= page.section
+        / %td= page.contactform
+        / %td= page.accordion
+        %td= link_to 'Edit', edit_page_path(page)
+        %td= link_to 'Destroy', [page], :confirm => 'Are you sure?', :method => :delete
+
+= link_to 'New Page', new_page_path

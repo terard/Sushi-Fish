@@ -1,0 +1,9 @@
+= title @page.title
+= page_name @page.name
+
+= meta_keywords @page.meta_keywords
+= meta_desc @page.meta_description
+
+= @page.content.html_safe
+  
+= sidebar @page.sidebar_html.html_safe if @page.sidebar_html

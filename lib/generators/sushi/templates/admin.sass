@@ -1,0 +1,284 @@
+html
+  color: #222
+  font-size: 13px
+  font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif
+body
+  background-color: #ccc
+  #container
+    width: 1024px
+    margin: 0 auto
+    padding: 0
+    #header
+      background-color: #09275e
+      color: #fff
+      padding: 10px 25px
+      height: 20px
+      .user_nav
+        float: right
+        font-size: 15px
+    #navigation
+      background-color: #666
+      padding: 0 0 0 10px
+      margin: 0
+      height: 30px
+      font-size: 110%
+      ul
+        margin: 0 0 0 0px
+        li
+          padding: 6px 0
+          float: left
+          margin: 0 15px 0 0
+          a, a:visited
+            color: #fff
+            text-decoration: none
+            padding: 7px 15px
+          a:hover
+            background: #999
+            color: #333
+            padding: 7px 15px
+    #flash
+      background-color: #000000
+    #content
+      background-color: #fff
+      padding: 10px 20px 25px 20px
+      margin: 0
+      a, a:visited
+        color: #09275e
+        text-decoration: none
+        font-weight: bold
+      ol.main
+        float: left
+        width: 620px
+      ul
+        li
+          line-height: 17px
+          letter-spacing: .2px
+    .sidebar
+      border-left: 1px solid #c8c8c8
+      width: 290px
+      margin: 0 0 0 10px
+      padding: 0 0 0 10px
+      float: right
+    #footer
+      background-color: #09275e
+      color: #fff
+      padding: 10px 20px
+
+h1
+  font-size: 140%
+  margin: 15px 0
+
+
+table
+  margin-bottom: 2em
+  width: 100%
+
+th
+  border-bottom: 2px solid #ccc
+  font-weight: bold
+  text-align: left
+
+td
+  border-bottom: 1px solid #ddd
+
+caption, th, td
+  padding: 4px 10px 4px 0
+
+caption
+  background: #f1f1f1
+  padding: 10px 0
+  margin-bottom: 1em
+
+tr, td, th
+  vertical-align: middle
+
+
+/* Forms
+
+input[type="submit"]::-moz-focus-inner
+  border: none
+
+/*removes dotted outline on submit buttons when clicking in firefox
+
+form ol.main
+  list-style: none
+  margin: 0 0 1em 0
+  ol
+    margin-left: 0
+  li
+    margin: 0 0 1em 0
+    list-style-position: outside
+  ol li
+    margin: 0 0 .25em 0
+    list-style-position: outside
+  li.error input
+    background: #FBE3E4
+
+form ol
+  list-style: none
+  margin: 0 0 1em 0
+  ol
+    margin-left: 0
+  li
+    margin: 0 0 1em 0
+    list-style-position: outside
+  ol li
+    margin: 0 0 .25em 0
+    list-style-position: outside
+  li.error input
+    background: #FBE3E4
+
+
+
+/*list-style-position fixes IE label margin bug
+
+p.inline-errors
+  color: #D12F19
+
+form
+  ol li.file
+    background: #e1e1e1
+    border: 1px solid #c8c8c8
+    padding: 10px
+  abbr
+    border-bottom: 0
+
+label
+  display: block
+
+.required label
+  font-weight: bold
+
+.checkbox_field label, .radio_field label
+  font-weight: normal
+
+a.cancel
+  color: #7d0d0d
+
+.inline-hints
+  font-size: 0.8em
+  color: #666
+  margin-bottom: 0.25em
+
+/* Fieldsets
+
+fieldset
+  margin: 0 0 1.5em 0
+  background: #f1f1f1
+  padding: 1.5em 1.5em 1em 1.5em
+  border: 1px solid #e3e3e3
+  fieldset
+    padding: 0
+    border: 0
+    fieldset
+      padding: 0
+      border: 0
+
+legend
+  font-weight: bold
+
+fieldset.buttons
+  background: inherit
+  border: 0
+  padding: 0
+  li
+    display: inline
+
+.radio fieldset
+  padding: 0
+  margin: 0
+
+/* Text fields
+
+input
+  &[type="text"], &[type="password"]
+    width: 300px
+    padding: 3px 2px
+    font-size: inherit
+  &[disabled='disabled']
+    background-color: #fcfcfc
+    cursor: default
+  &[type="checkbox"], &[type="radio"]
+    margin: 0 3px 0 0
+    vertical-align: middle
+    position: relative
+    top: -2px
+
+.check_boxes
+  label
+    vertical-align: middle
+    padding: 0
+    display: inline
+    font-weight: bold
+  margin: 0
+  padding: 0
+  li
+    list-style: none
+
+.check
+  input
+    vertical-align: top
+
+
+.radio label
+  padding: 0
+
+/* Textareas
+
+textarea
+  width: 90%
+  height: 200px
+  margin: 0 0.5em 0.5em 0
+  padding: 5px
+  font-size: inherit
+
+textarea.wide
+  width: 840px
+  height: 200px
+  margin: 0 0.5em 0.5em 0
+  padding: 5px
+  font-size: inherit
+
+textarea.stylesheet
+  width: 100%
+  height: 450px
+  margin: 0 0.5em 0.5em 0
+  padding: 5px
+  font-size: 120%
+
+
+/* Select fields
+
+fieldset .select select
+  width: 200px
+  font-size: 0.9em
+
+optgroup
+  margin: 0 0 .5em 0
+
+/* Date & Time
+
+form ol li
+  &.date ol li, &.time ol li
+    display: inline
+  &.datetime
+    ol li
+      display: inline-block
+    select
+      display: inline
+      width: auto
+  &.date select, &.time select
+    display: inline
+    width: auto
+  &.date label, &.time label
+    display: none
+
+#flash
+  margin: 0px 0 10px 0
+  width: 620px
+  color: #0f0f0f
+  font-size: 16px
+.alert, .notice
+  background-color: #f5df94
+  border: solid 5px #f5d671
+  padding: 7px

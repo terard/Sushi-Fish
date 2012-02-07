@@ -1,0 +1,12 @@
+%ul{ :class => "sf-menu" }
+  - Page.navigation.each do |root|
+    %li
+      = link_to root.link, link_path(root.name)
+      %ul
+        - root.children.show_in_nav.each do |item|
+          %li
+            = nav_link(item)
+            - unless item.children.empty?
+              %ul
+                - item.children.each do |item|
+                  %li= nav_link(item)

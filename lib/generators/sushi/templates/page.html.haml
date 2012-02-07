@@ -1,0 +1,27 @@
+!!! 5
+
+%html
+  %head
+    %title= yield(:title) || "Website"
+    %meta{:name => 'description', :content => "#{yield(:meta_desc)}"}
+    %meta{:name => "keywords", :content => "#{yield(:meta_keywords)}"}
+    
+    = stylesheet_link_tag 'superfish', 'open'
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+
+  %body{:id => "#{yield(:page_name)}" || "default"}
+
+    #container
+      #header
+        = render 'header'
+      #navigation
+        = render 'navigation'
+      #content
+        = yield
+      #sidebar
+        = render 'sidebar'
+        #sidebar_html
+          #{yield(:sidebar)}
+      #footer
+        = render 'footer'

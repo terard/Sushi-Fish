@@ -6,15 +6,6 @@ class SushiGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
   argument :app_name, :type => :string, :default => "website"
   
-  # http://stackoverflow.com/questions/6199301/global-access-to-rake-dsl-methods-is-deprecated
-  # https://github.com/rails/rails/commit/83f257fc4862642af29056cb5b7dfef6e1303754
-  # Fixed in Rails 3.1?
-  # def rake_dsl_fix
-  #   gsub_file "Rakefile", "require File.expand_path('../config/application', __FILE__)", "require File.expand_path('../config/application', __FILE__)\nrequire 'rake/dsl_definition'"
-  #   
-  #   gsub_file "Rakefile", "require 'rake'", "require 'rake'\ninclude Rake::DSL"
-  # end
-  
   def create_models
     generate :model, 'page name:string content:text page_title:string meta_keywords:text meta_description:text sidebar_html:text ancestry:string short_nav:string order_by:integer show_in_nav:boolean'    
     generate :model, 'stylesheet body:text'
@@ -80,21 +71,13 @@ class SushiGenerator < Rails::Generators::Base
     run "gc -m 'inital commit'"
   end
   
-  # def gems
-  #   gem 'haml', '2.2.24'
-  #   gem 'jquery-rails'
-  #   gem 'ancestry'
-  # 
-  #   gsub_file "Gemfile", /#.*\n/, "\n"
-  #   gsub_file "Gemfile", /\n+/, "\n"
-  #   
-  #   run 'bundle'
-  # end
+  def gems
+    gem 'haml'
+    gem 'ancestry'
+
+    run 'bundle'
+  end
     
-  # def jquery_setup
-  #   generate 'jquery:install --ui'
-  # end
-  
   def seed_data
     append_file 'db/seeds.rb', "Stylesheet.create! :body => '/* inject style here. */'\n"
     append_file 'db/seeds.rb', "Page.create! :name => 'index', :content => 'i am index. i have no data.'"

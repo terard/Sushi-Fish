@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Travis"]
   s.email       = ["travis@impossiblecreature.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{The firt public version of the infamous Sushi Gem.}
+  s.description = %q{Sushi Fish is a generator that gives a raw rails app ready for content. It is a great starting point to a CMS driven site.}
 
   s.rubyforge_project = "sushifish"
 

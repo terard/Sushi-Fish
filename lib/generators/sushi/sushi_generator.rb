@@ -17,7 +17,7 @@ class SushiGenerator < Rails::Generators::Base
   def indexes_and_defaults
     migration_template 'indexes_and_defaults.rb', 'db/migrate/indexes_and_defaults.rb'
     rake 'db:migrate'
-  end  
+  end
     
   def remove_files
     remove_file 'public/index.html' if File.exists?('public/index.html')

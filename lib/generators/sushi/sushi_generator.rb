@@ -30,12 +30,13 @@ class SushiGenerator < Rails::Generators::Base
     route "match ':section(/:page)' => 'page#show#:page', :as => :link"
     route "resources :pages, :module => 'admin'"
     route "resources :messages, :module => 'admin'"
-    route "resource :stylesheet"
-    route "get 'stylesheets/open'"
+    # route "resource :stylesheet"
+    # route "get 'stylesheets/open'"
   end
 
   def copy_files
     # copy_file 'admin_pages_controller.rb', 'app/controllers/admin/pages_controller.rb'
+    remove_file 'app/controllers/application_controller.rb'
     copy_file 'application_controller.rb', 'app/controllers/application_controller.rb'
     # copy_file 'dashboard_controller.rb', 'app/controllers/dashboard_controller.rb'
     # copy_file 'stylesheets_controller.rb', 'app/controllers/stylesheets_controller.rb'
@@ -43,7 +44,7 @@ class SushiGenerator < Rails::Generators::Base
     copy_file 'page_helper.rb', 'app/helpers/page_helper.rb'
     copy_file 'index.html.haml', 'app/views/page/index.html.haml'
     copy_file 'page.html.haml', 'app/views/layouts/page.html.haml'
-    # template 'application.html.haml', 'app/views/layouts/application.html.haml'
+    template 'application.html.haml', 'app/views/layouts/application.html.haml'
     # copy_file 'style.sass', 'public/stylesheets/sass/style.sass'
     copy_file 'reset.css.scss', 'app/assets/stylesheets/reset.css.scss'
     # copy_file 'admin.sass', 'public/stylesheets/sass/admin.sass'
@@ -85,6 +86,8 @@ class SushiGenerator < Rails::Generators::Base
     generate "active_admin:resource Page Stylesheet"
     
     # app/admin/pages
+    
+    rake 'db:migrate'
   end
     
   def seed_data

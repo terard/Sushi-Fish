@@ -10,7 +10,7 @@ class SushiGenerator < Rails::Generators::Base
     generate :model, 'page name:string content:text page_title:string meta_keywords:text meta_description:text sidebar_html:text ancestry:string short_nav:string order_by:integer show_in_nav:boolean'    
     generate :model, 'stylesheet body:text'
     rake 'db:migrate'
-    remove_file '/app/models/page.rb'
+    remove_file 'app/models/page.rb'
     copy_file 'page.rb', 'app/models/page.rb'
   end
   

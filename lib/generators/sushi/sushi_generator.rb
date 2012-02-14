@@ -35,20 +35,20 @@ class SushiGenerator < Rails::Generators::Base
   end
 
   def copy_files
-    copy_file 'admin_pages_controller.rb', 'app/controllers/admin/pages_controller.rb'
+    # copy_file 'admin_pages_controller.rb', 'app/controllers/admin/pages_controller.rb'
     copy_file 'application_controller.rb', 'app/controllers/application_controller.rb'
-    copy_file 'dashboard_controller.rb', 'app/controllers/dashboard_controller.rb'
-    copy_file 'stylesheets_controller.rb', 'app/controllers/stylesheets_controller.rb'
+    # copy_file 'dashboard_controller.rb', 'app/controllers/dashboard_controller.rb'
+    # copy_file 'stylesheets_controller.rb', 'app/controllers/stylesheets_controller.rb'
     copy_file 'page_controller.rb', 'app/controllers/page_controller.rb'
     copy_file 'page_helper.rb', 'app/helpers/page_helper.rb'
     copy_file 'index.html.haml', 'app/views/page/index.html.haml'
     copy_file 'page.html.haml', 'app/views/layouts/page.html.haml'
-    template 'application.html.haml', 'app/views/layouts/application.html.haml'
+    # template 'application.html.haml', 'app/views/layouts/application.html.haml'
     # copy_file 'style.sass', 'public/stylesheets/sass/style.sass'
-    # copy_file 'reset.sass', 'public/stylesheets/sass/reset.sass'
+    copy_file 'reset.css.scss', 'app/assets/stylesheets/reset.css.scss'
     # copy_file 'admin.sass', 'public/stylesheets/sass/admin.sass'
-    # copy_file 'layout.sass', 'public/stylesheets/sass/layout.sass'
-    # copy_file 'superfish.sass', 'public/stylesheets/sass/superfish.sass'    
+    copy_file 'layout.css.scss', 'app/assets/stylesheets/layout.css.scss'
+    copy_file 'superfish.css.scss', 'app/assets/stylesheets/superfish.css.scss'    
     copy_file 'style.css.scss', 'app/assets/stylesheets/style.css.scss'
     copy_file 'show.html.haml', 'app/views/page/show.html.haml'
     copy_file '_header.html.haml', 'app/views/page/_header.html.haml'
@@ -74,8 +74,17 @@ class SushiGenerator < Rails::Generators::Base
   def gems
     gem 'haml'
     gem 'ancestry'
+    gem 'activeadmin'
+    gem "meta_search", '>= 1.1.0.pre'
 
     run 'bundle'
+  end
+  
+  def activeadmin
+    generate "active_admin:install"
+    generate "active_admin:resource Page Stylesheet"
+    
+    # app/admin/pages
   end
     
   def seed_data

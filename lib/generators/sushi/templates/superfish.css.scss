@@ -1,0 +1,81 @@
+/** ESSENTIAL STYLES ** */
+// !ul_width = 16em
+
+.sf-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  line-height: 1em;
+  ul {
+    position: absolute;
+    top: -999em;
+    // width: !ul_width
+    /* left offset of submenus need to match (see below) */
+    li {
+      width: 100%; } }
+  li {
+    &:hover {
+      visibility: inherit;
+      /* fixes IE7 'sticky bug' */ }
+    float: left;
+    position: relative; }
+  a {
+    display: block;
+    position: relative; }
+  li {
+    &:hover ul, &.sfHover ul {
+      left: 0;
+      top: 2.7em;
+      /* match top ul list item height */
+      z-index: 99; } } }
+
+ul.sf-menu li {
+  &:hover li ul, &.sfHover li ul {
+    top: -999em; }
+  li {
+    &:hover ul, &.sfHover ul {
+      // left: !ul_width
+      /* match ul width */
+      top: 0; }
+    &:hover li ul, &.sfHover li ul {
+      top: -999em; }
+    li {
+      &:hover ul, &.sfHover ul {
+        // left: !ul_width
+        /* match ul width */
+        top: 0; } } } }
+
+/** Styling ** */
+
+.sf-menu {
+  float: left;
+  margin-bottom: 1em;
+  a {
+    padding: 0.4em 0.85em;
+    text-decoration: none;
+    /* visited pseudo selector so IE6 applies text colour */
+    color: white;
+    &:visited {
+      /* visited pseudo selector so IE6 applies text colour */
+      color: white; } }
+  li {
+    background: black;
+    padding: 0.4em 0;
+    margin: 0;
+    li {
+      background: black;
+      padding: 0.4em 0;
+      margin: 0;
+      li {
+        background: black; } }
+    &:hover, &.sfHover {
+      background: #666666;
+      outline: 0; } }
+  a {
+    &:focus, &:hover, &:active {
+      background: #666666;
+      outline: 0; } } }

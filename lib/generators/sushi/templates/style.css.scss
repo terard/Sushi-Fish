@@ -1,3 +1,56 @@
-html{
-  font: 13px/1.5em "Lucida Grande", calibri, Tahoma, Arial
-}
+/*@import "layout.sass";*/
+
+html {
+  font: 13px / 1.5em "Lucida Grande", calibri, Tahoma, Arial; }
+
+body {
+  #container {
+    font-size: 1em;
+    #header {
+      color: white; }
+    #navigation {
+      ul {}
+      float: left; }
+    #content {
+      float: left;
+      padding: 10px;
+      h1, h2 {
+        margin: 10px 0 15px; }
+      p {
+        margin: 10px 0 15px 0; } }
+    #sidebar {
+      color: #aaaaaa;
+      float: left; }
+    #footer {
+      color: #aaaaaa;
+      clear: both; } } }
+
+a,a:visited {
+  color: #003399;
+  text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: helvetica, arial, verdana, sans-serif;
+  font-weight: normal; }
+
+h1 {
+  font-size: 208%; }
+
+h2 {
+  font-size: 164%; }
+
+h3 {
+  font-size: 145%; }
+
+h4 {
+  font-size: 118%; }
+
+// #flash
+//   margin: 10px 0
+//   width: 720px
+//   color: #0f0f0f
+//   font-size: 16px
+//   .alert, .notice
+//     background-color: #F5DF94
+//     border: solid 5px #F5D671
+//     padding: 7px

@@ -6,8 +6,8 @@
     %meta{:name => 'description', :content => "#{yield(:meta_desc)}"}
     %meta{:name => "keywords", :content => "#{yield(:meta_keywords)}"}
     
-    / = stylesheet_link_tag 'superfish', 'open'
-    / = javascript_include_tag :defaults
+    = stylesheet_link_tag 'superfish', 'open'
+    = javascript_include_tag :defaults
     = csrf_meta_tag
 
   %body{:id => "#{yield(:page_name)}" || "default"}

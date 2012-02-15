@@ -8,7 +8,7 @@ Sushi Fish is a generator. It is made to be run on a new rails app to give you s
 Add the gem to your Gemfile and run the `bundle` command to install it.
 
 ```ruby
-gem "sushifish"
+gem 'sushifish'
 ```
 
 Run the generator to create the initial files.

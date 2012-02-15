@@ -51,6 +51,8 @@ class SushiGenerator < Rails::Generators::Base
     copy_file 'layout.css.scss', 'app/assets/stylesheets/layout.css.scss'
     copy_file 'superfish.css.scss', 'app/assets/stylesheets/superfish.css.scss'    
     copy_file 'style.css.scss', 'app/assets/stylesheets/style.css.scss'
+    remove_file 'app/assets/stylesheets/application.css'
+    copy_file 'application.css.scss', 'app/assets/stylesheets/application.css'
     copy_file 'show.html.haml', 'app/views/page/show.html.haml'
     copy_file '_header.html.haml', 'app/views/page/_header.html.haml'
     copy_file '_navigation.html.haml', 'app/views/page/_navigation.html.haml'
@@ -83,7 +85,9 @@ class SushiGenerator < Rails::Generators::Base
   
   def activeadmin
     generate "active_admin:install"
-    generate "active_admin:resource Page Stylesheet"
+    generate "active_admin:resource Page"
+    
+    remove_file 'app/admin/pages.rb'
     copy_file 'pages.rb', 'app/admin/pages.rb'
     
     # app/admin/pages

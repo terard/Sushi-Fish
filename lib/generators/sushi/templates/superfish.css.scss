@@ -1,5 +1,4 @@
-/** ESSENTIAL STYLES ** */
-// !ul_width = 16em
+$ul_width: 16em;
 
 .sf-menu {
   margin: 0;
@@ -13,7 +12,7 @@
   ul {
     position: absolute;
     top: -999em;
-    // width: !ul_width
+    width: $ul_width;
     /* left offset of submenus need to match (see below) */
     li {
       width: 100%; } }
@@ -29,7 +28,7 @@
   li {
     &:hover ul, &.sfHover ul {
       left: 0;
-      top: 2.7em;
+      top: 2.5em;
       /* match top ul list item height */
       z-index: 99; } } }
 
@@ -38,14 +37,14 @@ ul.sf-menu li {
     top: -999em; }
   li {
     &:hover ul, &.sfHover ul {
-      // left: !ul_width
+      width: $ul_width;
       /* match ul width */
       top: 0; }
     &:hover li ul, &.sfHover li ul {
       top: -999em; }
     li {
       &:hover ul, &.sfHover ul {
-        // left: !ul_width
+        width: $ul_width;
         /* match ul width */
         top: 0; } } } }
 

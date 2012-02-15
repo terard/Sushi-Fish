@@ -23,15 +23,6 @@ class Page < ActiveRecord::Base
   
   def nav_path
     name
-    # if nominal
-    #   if children.count > 0
-    #     children.first.name
-    #   else
-    #     ""
-    #   end
-    # else 
-    #   name
-    # end
   end
   
   scope :visible, where("visible = ?", true).order('id')

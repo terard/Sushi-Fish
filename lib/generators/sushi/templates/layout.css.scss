@@ -1,4 +1,4 @@
-!minimum_height = 140px {}
+/*!minimum_height = 140px {}*/
 
 html body {}
 
@@ -15,11 +15,11 @@ html body {}
 #flash {}
 
 #content {
-  min-height = !minimum_height {} }
+/*  min-height = !minimum_height {} }*/
 
 #sidebar {
   float: left;
-  min-height = !minimum_height {} }
+/*  min-height = !minimum_height {} }*/
 
 #footer {
   clear: both; }

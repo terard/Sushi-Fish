@@ -37,7 +37,7 @@ class SushiGenerator < Rails::Generators::Base
   def copy_files
     # copy_file 'admin_pages_controller.rb', 'app/controllers/admin/pages_controller.rb'
     remove_file 'app/controllers/application_controller.rb'
-    copy_file 'application_controller.rb', 'app/controllers/application_controller.rb'
+    # copy_file 'application_controller.rb', 'app/controllers/application_controller.rb'
     # copy_file 'dashboard_controller.rb', 'app/controllers/dashboard_controller.rb'
     # copy_file 'stylesheets_controller.rb', 'app/controllers/stylesheets_controller.rb'
     copy_file 'page_controller.rb', 'app/controllers/page_controller.rb'
@@ -84,6 +84,7 @@ class SushiGenerator < Rails::Generators::Base
   def activeadmin
     generate "active_admin:install"
     generate "active_admin:resource Page Stylesheet"
+    copy_file 'pages.rb', 'app/admin/pages.rb'
     
     # app/admin/pages
     

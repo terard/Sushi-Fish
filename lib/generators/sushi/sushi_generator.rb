@@ -36,7 +36,7 @@ class SushiGenerator < Rails::Generators::Base
 
   def copy_files
     # copy_file 'admin_pages_controller.rb', 'app/controllers/admin/pages_controller.rb'
-    remove_file 'app/controllers/application_controller.rb'
+    # remove_file 'app/controllers/application_controller.rb'
     # copy_file 'application_controller.rb', 'app/controllers/application_controller.rb'
     # copy_file 'dashboard_controller.rb', 'app/controllers/dashboard_controller.rb'
     # copy_file 'stylesheets_controller.rb', 'app/controllers/stylesheets_controller.rb'
@@ -52,7 +52,7 @@ class SushiGenerator < Rails::Generators::Base
     copy_file 'superfish.css.scss', 'app/assets/stylesheets/superfish.css.scss'    
     copy_file 'style.css.scss', 'app/assets/stylesheets/style.css.scss'
     remove_file 'app/assets/stylesheets/application.css'
-    copy_file 'application.css.scss', 'app/assets/stylesheets/application.css'
+    copy_file 'application.css', 'app/assets/stylesheets/application.css'
     copy_file 'show.html.haml', 'app/views/page/show.html.haml'
     copy_file '_header.html.haml', 'app/views/page/_header.html.haml'
     copy_file '_navigation.html.haml', 'app/views/page/_navigation.html.haml'
